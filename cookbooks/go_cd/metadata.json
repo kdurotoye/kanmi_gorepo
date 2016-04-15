@@ -1,0 +1,49 @@
+{
+  "name": "go_cd",
+  "description": "Installs/Configures go-server",
+  "long_description": "## go_cd Cookbook\n[Chef](https://www.chef.io/chef/) cookbook for managing [GoCD](http://www.go.cd/).\n\n### Description\nThis cookbook install and configures ThoughtWorks GoCD server and agent.\nThis cookbook is adapted from the other community [GoCD cookbook](https://github.com/ketan/thoughtworks-go-cookbooks) to support running agents as custom user.\n\n### Usage\n\nEither assign the relevent recipes (server or agent) directly to node's run list or use `include_recipe` from wrapper recipes.\n\nThe agent recipe uses `node['go_cd']['server_ip']` attribute to configure the GoCD server. By default this points to localhost. If you are using chef solo, use role or environment to override this value, if you are using chef search capabilties, you can use wrapper recipes as well to specify the GoCD server ip. Example:\n\n```ruby\nnode.default['go_cd']['server_ip'] = search(:node, 'name:gocd-server').first.ipaddress\ninclude_recipe 'go_cd::agent'\n```\n\nThis cookbook is used along side [container](https://github.com/GoatOS/container) and [xml_file](https://github.com/GoatOS/xml_file) cookbooks to create Continuous Integration servers, capable of running unprivileged LXC containers as part of their [build/test pipelines](https://github.com/GoatOS/GoatOS). An example can be found [here](https://github.com/GoatOS/go_cd/blob/master/functional/lxc_spec.rb) (dogfood :-))\n\n## License\n[Apache 2](http://www.apache.org/licenses/LICENSE-2.0)\n\n\n## Contributing\n\n1. Fork it ( https://github.com/GoatOS/go_cd/fork )\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Add some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create a new Pull Request\n",
+  "maintainer": "Ranjib Dey",
+  "maintainer_email": "ranjib@linux.com",
+  "license": "All rights reserved",
+  "platforms": {
+
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+    "go_cd::server": "Install GoCD server",
+    "go_cd::agent": "Install GoCD agent"
+  },
+  "version": "0.3.0",
+  "source_url": "https://github.com/GoatOS/go_cd",
+  "issues_url": "https://github.com/GoatOS/go_cd/issues",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ]
+}
