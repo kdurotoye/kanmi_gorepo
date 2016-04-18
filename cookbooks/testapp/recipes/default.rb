@@ -32,7 +32,3 @@ execute 'install testapp' do
   action :run
 end
 
-execute 'start testapp' do
-  command '/usr/local/go/bin/test'
-  action :run
-end
