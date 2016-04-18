@@ -4,7 +4,7 @@ The custom cookbooks for this task are:
 * custom-nginx_server
 * testapp
 
-After completeing the setting up of your Chef workspace, execute the following command on each of the nodes to run the cookbooks.
+After completing the setting up of your Chef workspace, execute the following command on each of the nodes to run the cookbooks.
 
     sudo chef-client
 
